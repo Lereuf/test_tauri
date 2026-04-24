@@ -12,6 +12,13 @@ async function greet() {
   }
 }
 
+async function testSuzie() {
+  const reponse = await invoke("bonjour_suzie");
+  console.log(reponse);
+}
+
+testSuzie();
+
 window.addEventListener("DOMContentLoaded", () => {
   greetInputEl = document.querySelector("#greet-input");
   greetMsgEl = document.querySelector("#greet-msg");
