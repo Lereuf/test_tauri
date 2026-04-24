@@ -12,11 +12,6 @@ async function greet() {
   }
 }
 
-async function testSuzie() {
-  const reponse = await invoke("bonjour_suzie");
-  console.log(reponse);
-}
-
 window.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#btn-quitter")?.addEventListener("click", () => {
     invoke("fermer_app");
