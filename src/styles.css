@@ -1,14 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 body {
+    margin: 0; /* Enlève la marge blanche par défaut du navigateur */
+    padding-top: 60px; /* Décale tout le contenu vers le bas pour ne pas être caché par la barre */
     background-color: #ffe7e2;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#pres {
-    text-align: center;
+.titlebar {
+  position: fixed; /* Accroche la barre tout en haut de la fenêtre */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  /* background-color: blue; <-- Tu peux supprimer cette ligne, je suppose que c'était pour tester ! */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: grab;
+  z-index: 999; /* S'assure que la barre est au-dessus des images */
 }
 
+.titlebar:active {
+  cursor: grabbing;
+}
+
+#letitre {
+  margin: 0;
+  font-size: 24px;
+  user-select: none;
+  pointer-events: none; /* LE SECRET : La souris traverse le texte et "attrape" la barre derrière ! */
+}
+
+.close-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.2s;
+}
+
+.close-btn:hover {
+  background: rgba(255, 0, 0, 1);
+}
 
 #images_suzie1 {
     display: flex;

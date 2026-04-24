@@ -17,7 +17,11 @@ async function testSuzie() {
   console.log(reponse);
 }
 
-testSuzie();
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("#btn-quitter")?.addEventListener("click", () => {
+    invoke("fermer_app");
+  });
+});
 
 window.addEventListener("DOMContentLoaded", () => {
   greetInputEl = document.querySelector("#greet-input");
